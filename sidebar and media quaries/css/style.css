@@ -1,0 +1,293 @@
+body {
+  font-family: "Varta", sans-serif;
+  color: #706458;
+  background-color: #F3EEE8;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0; 
+}
+
+.container {
+  margin: 0 auto;
+  width: 1440px;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-left {
+  display: inline-block;
+  width: 50%;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 55px;
+  margin-bottom: 110px;
+}
+
+a {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 25px;
+  text-decoration: none;
+  color: #706458;
+  transition: 0.2s ease-in-out;
+}
+
+a:hover {
+  color: #f4902c;
+  transition: 0.2s ease-in-out;
+}
+
+a svg:hover {
+  transform: scale(1.1);
+  transition: 0.2s ease-in-out;
+}
+
+.main-nav a {
+  margin-left: 24px;
+}
+
+input {
+  display: none;
+}
+
+p {
+  margin-bottom: 50px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: 1px;
+}
+
+/* не понимаю, почему не применяется размер шрифта */
+h1 {
+  font-size: 50px;
+  font-weight: 300;
+  line-height: 70px;
+  letter-spacing: -0.5px;
+  margin-bottom: 30px;
+}
+
+h2 {
+  font-size: 22px;
+  font-weight: 300;
+  line-height: 31px;
+  margin-bottom: 48px;
+}
+
+.header-right {
+  position: relative;
+  display: inline-block;
+  width: 50%;
+}
+
+.header-right img {
+  object-fit: fill;
+}
+
+.header-right a {
+  position: absolute;
+  z-index: 1;
+  top: 13vh;
+  right: 31vh;
+}
+
+@media (max-width: 376px) {
+  .header-right {
+    display: none;
+  }
+
+  body {
+    background-image: url(../img/background-mobile.png);
+    background-repeat: no-repeat;
+    background-size: auto;
+    color: #F7F8F9;
+    text-align: center;
+  }
+
+  .container {
+    margin: 0 auto;
+  }
+
+  .flex {
+    display: inline;
+  }
+
+  .header-left {
+    display: inline-block;
+    width: 325px;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  .flex-container {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 41px;
+    margin-bottom: 91px;
+  }
+
+  /* начало работы с сайдбаром */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .main-sidebar {
+    text-align: right;
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+  }
+
+  #check {
+    display: none;
+  }
+
+  .button {
+    width: 48px;
+    height: 48px;
+    padding: 12px;
+    display: inline-block;
+    cursor: pointer;
+    transition: all 0.2s ease-in;
+    padding-top: 8px;
+    line-height: 8px;
+    text-align: left;
+    position: fixed;
+    right: 35px;
+    top: 37px;
+    z-index: 3;
+  }
+
+  .button span {
+    height: 3px;
+    width: 100%;
+    background: white;
+    display: inline-block;
+    transition: all 0.5s cubic-bezier(.62, .43, .35, 1.47);
+  }
+
+  /* toggle icon animation */
+  #check:checked~.button span:nth-child(1) {
+    width: 100%;
+    transform: rotate(45deg) translateY(6px) translateX(6px);
+  }
+
+  #check:checked~.button span:nth-child(2) {
+    width: 0;
+  }
+
+  #check:checked~.button span:nth-child(3) {
+    width: 100%;
+    transform: rotate(-45deg) translateY(-7px) translateX(7px);
+  }
+
+  /* the nav height is set to 0 when the navbar is closed */
+  .main-nav {
+    text-align: center;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    position: absolute;
+    top: 35px;
+    left: -50px;
+    width: 115%;
+    background: #ffffff;
+    height: 0;
+  }
+
+  .main-nav a {
+    text-decoration: none;
+    color: #0c1019;
+    display: block;
+    font-size: 18px;
+    transition: all 0.4s cubic-bezier(.22, .43, .35, 1.5);
+    opacity: 0;
+    transform: scale(0);
+    transform-origin: top;
+    text-align: center;
+    border-bottom: 1px solid #b4ac97;
+  }
+
+  /* the nav height will be set to the height in pixels that would have for default, using height:auto won't work but you can put that value in pixels creating the slide*/
+  #check:checked~.main-nav {
+    height: 184px;
+  }
+
+  #check:checked~.main-nav a {
+    padding: 10px;
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  /*конец работы с сайдбаром*/
+
+  .flex-container svg path {
+    fill: #F3EEE8;
+  }
+
+  a {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 25px;
+    text-decoration: none;
+    color: #F3EEE8;
+    transition: 0.2s ease-in-out;
+  }
+
+  a:hover {
+    color: #f4902c;
+    transition: 0.2s ease-in-out;
+  }
+
+  a svg:hover {
+    transform: scale(1.1);
+    transition: 0.2s ease-in-out;
+  }
+
+  p {
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 20px;
+    letter-spacing: 1px;
+    margin-bottom: 24px;
+  }
+
+  h1 {
+    font-size: 35px;
+    font-weight: 300;
+    line-height: 40px;
+    letter-spacing: -0.30000001192092896px;
+    margin-bottom: 24px;
+  }
+
+  h2 {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 25px;
+    margin-bottom: 24px;
+  }
+
+  .page-info svg path {
+    fill: #F3EEE8;
+  }
+
+  .page-info rect {
+    stroke: #F3EEE8;
+  }
+}

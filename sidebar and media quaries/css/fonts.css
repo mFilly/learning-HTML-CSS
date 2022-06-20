@@ -1,0 +1,23 @@
+@font-face {
+      font-family: "Varta";
+      font-style: normal;
+      font-weight: 400;
+      src: local("Varta"),
+            url("fonts/Varta-Regular.woff") format("woff");
+}
+
+@font-face {
+      font-family: "Varta";
+      font-style: normal;
+      font-weight: 300;
+      src: local("Varta"),
+            url("fonts/Varta-Light.woff") format("woff");
+}
+
+@font-face {
+      font-family: "Varta";
+      font-style: normal;
+      font-weight: 700;
+      src: local("Varta"),
+            url("fonts/Varta-Bold.woff") format("woff");
+}
